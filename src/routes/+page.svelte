@@ -7,6 +7,10 @@
 	let inputValue = '';
 
 
+  import { ProgressBar } from '@skeletonlabs/skeleton';
+	import { LightSwitch } from '@skeletonlabs/skeleton';
+  import 'remixicon/fonts/remixicon.css'
+
   // Convert blob to Base64 data URL
   async function blobToDataURL(/** @type {Blob} */ blob) {
     return new Promise((resolve) => {
@@ -70,13 +74,50 @@
       });
   }
 
-  </script>	
+  </script>
+
+
+
 <div>
+  <div>
 	<h1>Image Generator</h1>
-	<input type="text" bind:value={inputValue} placeholder="Enter text here" />
+  <LightSwitch />
+</div>
+
+
+
+
+<div class="card p-4">
+  <aside class="alert variant-filled-warning">
+    <!-- Icon -->
+    <div><i class="ri-alarm-warning-fill"></i></div>
+    <!-- Message -->
+    <div class="alert-message">
+      <h3 class="h3">Alert</h3>
+      <p>this website is Early access and is likely to break</p>
+    </div>
+    <!-- Actions -->
+    <div class="alert-actions">(buttons)</div>
+  </aside>
+
+	<h2 class="h2">step one</h2>
+	<p>The quick brown fox jumps over the lazy dog.</p>
+	<h2 class="h2">step two</h2>
+	<p>The quick brown fox jumps over the lazy dog.</p>
+</div>
+
+
+<div class="card p-4">
+<button type="button" class="btn variant-filled">
+	<span><i class="ri-magic-fill"></i></span>
+	<span>Button</span>
+</button>
+<ProgressBar />
+
+	<input type="text" bind:value={inputValue} placeholder="Enter text here"/>
 	<button on:click={callOpenAI}>Generate</button>
 	{#if imageSrc}
 	  <img src={imageSrc} alt="Generated" />
 	{/if}
+</div>
   </div>
-  
